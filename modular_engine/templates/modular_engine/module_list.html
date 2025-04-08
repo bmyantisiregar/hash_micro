@@ -1,0 +1,26 @@
+<h1>Available Modules</h1>
+<table border="1" cellpadding="8">
+    <thead>
+        <tr>
+            <th>Module</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for module in all_modules %}
+        <tr>
+            <td>{{ module.name }}</td>
+            <td>{{ module.module_metadata.description }}</td>
+            <td>
+                {% if module.name in installed_modules %}
+                <a href="{% url 'upgrade_module' module.name %}">Upgrade</a> |
+                <a href="{% url 'uninstall_module' module.name %}">Uninstall</a>
+                {% else %}
+                <a href="{% url 'install_module' module.name %}">Install</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
