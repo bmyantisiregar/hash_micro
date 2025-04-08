@@ -47,9 +47,9 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS('Setup complete!'))
         self.stdout.write(self.style.SUCCESS('You can now visit: http://127.0.0.1:8000/module/ to manage modules.'))
 
-        # 6. Start server automatically
-        self.stdout.write(self.style.NOTICE('Starting Django development server...'))
-        try:
-            subprocess.run(["python", "manage.py", "runserver"], check=True)
-        except subprocess.CalledProcessError as e:
-            self.stdout.write(self.style.ERROR(f'Error starting server: {e}'))
+        # # 6. Start server automatically
+        # self.stdout.write(self.style.NOTICE('Starting Django development server...'))
+        # try:
+        #     subprocess.run(["python", "manage.py", "runserver"], check=True)
+        # except subprocess.CalledProcessError as e:
+        #     self.stdout.write(self.style.ERROR(f'Error starting server: {e}'))
