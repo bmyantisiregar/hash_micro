@@ -3,3 +3,4 @@ model-bakery>=1.15.0
 python-decouple==3.8
 psycopg2-binary
 coverage
+gunicorn
